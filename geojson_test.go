@@ -29,7 +29,7 @@ func TestUpdateData(t *testing.T) {
 		Name:   "qobel",
 		Volume: "1",
 	}
-	up := UpdateNameGeo("MONGOSTRING", "geogcp", context.Background(), data)
+	up := UpdateNameGeo("MONGOSTRING", "GISGCP", context.Background(), data)
 	fmt.Println(up)
 }
 
@@ -39,7 +39,7 @@ func TestDeleteDataGeo(t *testing.T) {
 		Name:   "qobel",
 		Volume: "1",
 	}
-	up := DeleteDataGeo("MONGOSTRING", "geogcp", context.Background(), data)
+	up := DeleteDataGeo("MONGOSTRING", "GISGCP", context.Background(), data)
 	fmt.Println(up)
 }
 
