@@ -26,8 +26,8 @@ func TestGeneratePaseto(t *testing.T) {
 func TestUpdateData(t *testing.T) {
 	data := LonLatProperties{
 		Type:   "Polygon",
-		Name:   "qobel",
-		Volume: "1",
+		Name:   "s",
+		Volume: "s",
 	}
 	up := UpdateNameGeo("MONGOSTRING", "GISGCP", context.Background(), data)
 	fmt.Println(up)
