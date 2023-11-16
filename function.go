@@ -18,9 +18,9 @@ func InsertUserdata(MongoConn *mongo.Database, username, password string) (Inser
 
 func UpdateNameGeo(Mongoenv, dbname string, ctx context.Context, val LonLatProperties) (UpdateID interface{}) {
 	conn := GetConnectionMongo(Mongoenv, dbname)
-	filter := bson.D{{"volume", val.Volume}}
-	update := bson.D{{"$set", bson.D{
-		{"name", val.Name},
+	filter := bson.D{{Key:"volume", Value: val.Volume}}
+	update := bson.D{{Key:"$set", Value: bson.D{
+		{Key:"name", Value: val.Name},
 	}}}
 	res, err := conn.Collection("lonlatpost").UpdateOne(ctx, filter, update)
 	if err != nil {
@@ -31,7 +31,7 @@ func UpdateNameGeo(Mongoenv, dbname string, ctx context.Context, val LonLatPrope
 
 func DeleteDataGeo(Mongoenv, dbname string, ctx context.Context, val LonLatProperties) (DeletedId interface{}) {
 	conn := GetConnectionMongo(Mongoenv, dbname)
-	filter := bson.D{{"volume", val.Volume}}
+	filter := bson.D{{Key:"volume", Value: val.Volume}}
 	res, err := conn.Collection("lonlatpost").DeleteOne(ctx, filter)
 	if err != nil {
 		return "Gagal Delete"

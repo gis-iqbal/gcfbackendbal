@@ -29,7 +29,7 @@ func TestUpdateData(t *testing.T) {
 		Name:   "s",
 		Volume: "s",
 	}
-	up := UpdateNameGeo("MONGOSTRING", "GISGCP", context.Background(), data)
+	up := UpdateNameGeo("MONGOSTRING", "Gischp5coba", context.Background(), data)
 	fmt.Println(up)
 }
 
@@ -39,12 +39,12 @@ func TestDeleteDataGeo(t *testing.T) {
 		Name:   "qobel",
 		Volume: "1",
 	}
-	up := DeleteDataGeo("MONGOSTRING", "GISGCP", context.Background(), data)
+	up := DeleteDataGeo("MONGOSTRING", "Gischp5coba", context.Background(), data)
 	fmt.Println(up)
 }
 
 func TestInsertUser(t *testing.T) {
-	conn := GetConnectionMongo("MONGOSTRING", "geogcp")
+	conn := GetConnectionMongo("MONGOSTRING", "Gischp5coba")
 	pass, _ := pasproj.HashPass("qobel123")
 	data := RegisterStruct{
 		Username: "iqbal",
